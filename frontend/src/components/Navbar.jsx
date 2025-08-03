@@ -26,9 +26,13 @@ function Navbar() {
                 <li><a href="/" className="text-gray-600 hover:text-yellow-600 transition-colors duration-300">Home</a></li>
                 <li><a href="about-us" className="text-gray-600 hover:text-yellow-600 transition-colors duration-300">About Us</a></li>
                 <li>
+                    {
+                    !user ?
                     <a href="/register" className="bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-normal hover:bg-yellow-600 transition-colors duration-300">
                         Join Our Team
                     </a>
+                    : ""
+                    }
                 </li>
                 {/* Admin Login Link */}
                 <li>{

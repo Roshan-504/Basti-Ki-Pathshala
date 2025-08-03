@@ -92,13 +92,13 @@ Follow these steps to set up and run the project locally.
 ![About Us](./screenshots/about-us.png)
 
 ### 📝 Volunteer/Intern Form
-![Application Form](./screenshots/form.png)
+![Application Form](./screenshots/Form.png)
 
 ### 🔐 Admin Login Page
 ![Admin Login](./screenshots/login.png)
 
 ### 📋 Admin Dashboard (Applicants List)
-![Admin Dashboard](./screenshots/dashboard.png)
+![Admin Dashboard](./screenshots/Dashboard.png)
 
 ### 📋 Applicants Details
 ![Applicants Details](./screenshots/application.png)

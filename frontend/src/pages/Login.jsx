@@ -35,8 +35,17 @@ const AdminLogin = () => {
       toast.success('Logged in successfully!');
       navigate('/admin'); // Redirect to dashboard
     } catch (error) {
-      console.log(error)
-      toast.error(error.response?.data?.error || 'Login failed');
+      console.log('Login error:', error);
+
+      if (error.code === 'ERR_NETWORK') {
+        toast.error(
+          "🚀 The server is starting up. Please wait 30–60 seconds and try again."
+        );
+      } else if (error.response?.data?.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Login failed. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -45,6 +54,10 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen bg-[#FBF6ED] flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <p className="text-sm text-gray-500 mt-1">
+          ⚠️ Backend may take 30–60 seconds to wake up. Please wait if login fails initially.
+        </p>
+
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Admin Login</h2>
           <p className="text-gray-600 mt-2">
